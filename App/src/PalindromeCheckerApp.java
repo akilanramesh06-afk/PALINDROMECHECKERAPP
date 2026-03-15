@@ -12,29 +12,30 @@
  * @version 1.0
  */
 
-class PalindromeCheckerApp {
 
     /**
      * Application entry point
      */
-    public static void main(String[] args) {
+    import java.util.Scanner;
 
-        // Hardcoded string
-        String word = "madam";
+    public class PalindromeCheckerApp {
+        public static void main(String[] args) {
 
-        // Reverse the string
-        String reversed = "";
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Input text: ");
+            String input = sc.nextLine();
 
-        for (int i = word.length() - 1; i >= 0; i--) {
-            reversed = reversed + word.charAt(i);
+            String reversed = "";
+
+            for (int i = input.length() - 1; i >= 0; i--) {
+                reversed = reversed + input.charAt(i);
+            }
+
+            boolean isPalindrome = input.equals(reversed);
+
+            System.out.println("Reversed text: " + reversed);
+            System.out.println("It is a Palindrome ? : " + isPalindrome);
+
+            sc.close();
         }
-
-        // Check palindrome using if-else
-        if (word.equals(reversed)) {
-            System.out.println("The word \"" + word + "\" is a palindrome.");
-        } else {
-            System.out.println("The word \"" + word + "\" is NOT a palindrome.");
-        }
-
     }
-}
